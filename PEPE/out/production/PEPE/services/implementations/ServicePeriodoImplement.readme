@@ -1,0 +1,46 @@
+package services.implementations;
+
+import java.util.List;
+
+import exceptions.NullExceptions;
+import services.ServiceCrudGenericoString;
+import repository.models.Periodo;
+import repository.interfaces.ModelCrudGenericoString;
+
+public class ServicePeriodoImplement implements ServiceCrudGenericoString<Periodo> {
+    private final ModelCrudGenericoString<Periodo> crudRepositoryPeriodo;
+
+    public ServicePeriodoImplement(ModelCrudGenericoString<Periodo> crudRepositoryPeriodo){
+        this.crudRepositoryPeriodo = crudRepositoryPeriodo;
+    }
+
+    @Override
+    public List<Periodo> listar(){
+        return this.crudRepositoryPeriodo.listar();
+    }
+
+    @Override
+    public Periodo busqueda(String nombre) throws NullExceptions {
+       Periodo periodo = this.crudRepositoryPeriodo.busqueda(nombre);
+        if(periodo != null){
+            return periodo;
+        } else {
+            throw new NullExceptions("No se encontró el periodo");
+        }   
+    }
+
+    @Override
+    public void crear(Periodo periodo){
+        this.crudRepositoryPeriodo.crear(periodo);
+    }
+
+    @Override
+    public void editar(Periodo periodo){
+        this.crudRepositoryPeriodo.editar(periodo);
+    }
+
+    @Override
+    public void eliminar(String nombre){
+        this.crudRepositoryPeriodo.eliminar(nombre);
+    }
+}

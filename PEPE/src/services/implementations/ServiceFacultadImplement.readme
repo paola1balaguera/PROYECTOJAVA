@@ -1,0 +1,58 @@
+package services.implementations;
+
+import java.util.List;
+
+import exceptions.*;
+import services.ServiceCrudGenericoString;
+import repository.models.*;
+import repository.interfaces.*;
+
+public class ServiceFacultadImplement implements ServiceCrudGenericoString<Facultad> {
+    private final ModelCrudGenericoString crudRepositoryFacultad;
+
+    ServiceFacultadImplement(ModelCrudGenericoString crudRepositoryFacultad){
+        this.crudRepositoryFacultad = crudRepositoryFacultad;
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<Facultad> listar(){
+        return this.crudRepositoryFacultad.listar();
+    }
+
+    @Override
+    public Facultad busqueda(String nombre) throws NullExceptions, TipoDatoErroneo{
+
+        Facultad facultad = (Facultad) this.crudRepositoryFacultad.busqueda(nombre);
+
+        if(facultad == null){
+            throw new NullExceptions("No se encontro Departamento");
+        }
+
+        if(!facultad.matches("[a-zA-Z]+")){
+            throw new TipoDatoErroneo("Tipo de dato erroneo");
+        }
+        
+        else{
+            return facultad;
+        }
+    }
+
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public void crear(Facultad facultad){
+        this.crudRepositoryFacultad.crear(facultad);
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public void editar(Facultad facultad){
+        this.crudRepositoryFacultad.editar(facultad);
+    }
+
+    @Override
+    public void eliminar(String nombre){
+        this.crudRepositoryFacultad.eliminar(nombre);
+    }
+}

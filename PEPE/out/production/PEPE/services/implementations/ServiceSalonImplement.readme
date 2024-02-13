@@ -1,0 +1,64 @@
+package services.implementations;
+
+import java.util.List;
+
+import exceptions.NullExceptions;
+import exceptions.TipoDatoErroneo;
+import repository.models.Salon;
+import repository.interfaces.ModelCrudGenerico;
+import repository.interfaces.ModelCrudGenericoString;
+import services.ServiceCrudGenericoString;
+
+public class ServiceSalonImplement implements ServiceCrudGenericoString<Salon> {
+    private final ModelCrudGenerico crudRepositorySalon;
+
+    public ServiceSalonImplement(ModelCrudGenerico crudRepositorySalon) {
+        this.crudRepositorySalon = crudRepositorySalon;
+    }
+
+    @Override
+    public List<Salon> listar() {
+        return this.crudRepositorySalon.listar();
+    }
+
+    @Override
+    public Salon busqueda(String id) throws NullExceptions, TipoDatoErroneo {
+        int salonId;
+        try {
+            salonId = Integer.parseInt(id);
+        } catch (NumberFormatException e) {
+            throw new TipoDatoErroneo("Tipo de dato erróneo. Se esperaba un número entero.");
+        }
+
+        Salon salon = (Salon) this.crudRepositorySalon.busqueda(salonId);
+
+        if (salon == null) {
+            throw new NullExceptions("No se encontró el salón con el ID proporcionado.");
+        }
+
+        return salon;
+    }
+
+    @Override
+    public void crear(Salon salon) {
+        this.crudRepositorySalon.crear(salon);
+    }
+
+    @Override
+    public void editar(Salon salon) {
+        this.crudRepositorySalon.editar(salon);
+    }
+
+    @Override
+    public void eliminar(String id) {
+        int salonId;
+        try {
+            salonId = Integer.parseInt(id);
+        } catch (NumberFormatException e) {
+            System.out.println("El ID debe ser un número entero.");
+            return;
+        }
+
+        this.crudRepositorySalon.eliminar(salonId);
+    }
+}

@@ -1,0 +1,52 @@
+package services.implementations;
+
+import java.util.List;
+
+import exceptions.*;
+import services.ServiceCrudGenericoString;
+import repository.models.*;
+import repository.interfaces.*;
+
+public class ServiceCursoImplement implements ServiceCrudGenericoString<Curso> {
+    
+    private static final repository.models.Curso Curso = null;
+    private final ModelCrudGenericoString crudRepositoryCurso;
+
+    public ServiceCursoImplement(ModelCrudGenericoString crudRepositoryCurso){
+        this.crudRepositoryCurso = crudRepositoryCurso;
+    }
+
+     @Override
+    public List<Curso> listar(){
+        return this.crudRepositoryCurso.listar();
+    }
+
+    @Override
+    public Curso busqueda(String nombre) throws NullExceptions{
+
+        Curso curso = (Curso) this.crudRepositoryCurso.busqueda(nombre);
+        if(Curso!= null){
+            return Curso;
+        }
+        else{
+            throw new NullExceptions("No se encontro Curso");
+        }   
+    }
+
+
+    @Override
+    public void crear(Curso curso){
+        this.crudRepositoryCurso.crear(curso);
+    }
+
+    @Override
+    public void editar(Curso curso){
+        this.crudRepositoryCurso.editar(curso);
+    }
+
+    @Override
+    public void eliminar(String nombre){
+        //se debe eliminar con un string
+        this.crudRepositoryCurso.eliminar(0);
+    }
+}

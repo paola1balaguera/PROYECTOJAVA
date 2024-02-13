@@ -1,0 +1,57 @@
+package services.implementations;
+
+import java.util.List;
+
+import exceptions.*;
+import services.ServiceCrudGenerico;
+import repository.models.*;
+import repository.interfaces.*;
+
+public class ServiceHorarioImplement implements ServiceCrudGenerico<Horario>{
+    private final ModelCrudGenerico crudRepositoryHorario;
+
+    public ServiceHorarioImplement(ModelCrudGenerico crudRepositoryHorario){
+        this.crudRepositoryHorario = crudRepositoryHorario;
+    }
+
+    @Override
+    public List<Horario>listar(){
+        return this.crudRepositoryHorario.listar();
+    }
+
+    @Override
+    public Horario busqueda(int id) throws NullExceptions, TipoDatoErroneo{
+
+        Horario horario = (Horario) this.crudRepositoryHorario.busqueda(id);
+
+        if(horario == null){
+            throw new NullExceptions("No se encontro Departamento");
+        }
+
+        if(horario.matches("\\d+")){
+            throw new TipoDatoErroneo("Tipo de dato erroneo");
+        }
+        
+        else{
+            return horario;
+        }
+    }
+
+    @Override
+    public void crear(Horario ejemplo) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'crear'");
+    }
+
+    @Override
+    public void editar(Horario ejemplo) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'editar'");
+    }
+
+    @Override
+    public void eliminar(int id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'eliminar'");
+    }
+}
