@@ -42,4 +42,9 @@ public class Horario {
     public AsignaturaPeriodo getAsignaturaPeriodo() {
         return asignaturaPeriodo;
     }
+
+    public Horario getAsignatura() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAsignatura'");
+    }
 }

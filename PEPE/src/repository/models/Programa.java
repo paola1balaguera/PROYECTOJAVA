@@ -32,8 +32,8 @@ public class Programa {
     @Override
     public String toString() {
         return "Programa{" +
-                "nombre='" + nombre + '\'' +
-                
-                '}';
+                "nombre=" + nombre + '\'' +
+                "nivel=" + nivel + '\'' +
+            '}';
     }
 }

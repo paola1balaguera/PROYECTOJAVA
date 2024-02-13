@@ -31,7 +31,20 @@ public class viewMain {
                     viewMatricula.startMenu();
                 case 3:
                     ViewPrograma.startMenu();
-            
+
+                case 4:
+                    viewSalon.startMenu();
+
+                case 5:
+                    viewTarifa.startMenu();
+                case 6:
+                    viewAsignatura.startMenu();
+                case 7:
+                    viewCurso.startMenu();
+                case 8:
+                    viewProfesor.startMenu();
+                case 9:
+                    viewHorario.startMenu();
                 default:
                     System.out.println("Fin");
                     break;
@@ -44,7 +57,13 @@ public class viewMain {
         System.out.println("1. Modulo de Alumnos");
         System.out.println("2. Modulo de matriculas");
         System.out.println("3. Modulo de programa");
-        System.out.println("4. Salir:");
+        System.out.println("4. Modulo de salon");
+        System.out.println("5. Modulo de tarifa");
+        System.out.println("6. Modulo de asignatura");
+        System.out.println("7. Modulo de curso");
+        System.out.println("8. Modulo de profesor");
+        System.out.println("9. Modulo de horario");
+        System.out.println("10. Salir:");
         return leer.nextInt();
     }
 }

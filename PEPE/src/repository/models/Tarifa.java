@@ -13,6 +13,10 @@ public class Tarifa {
         this.periodo = periodo;
     }
 
+    public Tarifa(int id2, double valorCredito2, Periodo periodo2, Programa programa2) {
+        //TODO Auto-generated constructor stub
+    }
+
     public int getId() {
         return id;
     }
