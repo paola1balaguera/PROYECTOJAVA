@@ -39,4 +39,19 @@ public class Salon {
     public Edificio getEdificio() {
         return edificio;
     }
+
+    public void setCapacidadAlumnos(int capacidadAlumnos2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setCapacidadAlumnos'");
+    }
+
+    public void setIdentificador(String identificador2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setIdentificador'");
+    }
+
+    public void setPiso(int piso2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setPiso'");
+    }
 }

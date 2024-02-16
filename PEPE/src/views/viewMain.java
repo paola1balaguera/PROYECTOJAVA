@@ -18,6 +18,10 @@ public class viewMain {
     public static final ServiceCrudGenerico<Alumno> serviceAlumno = new ServiceAlumnoImplement(new RepositoryAlumnoMysqlImpl());
     public static final Scanner leer = new Scanner(System.in);
 
+    /**
+     * @param args
+     * @throws ParseException
+     */
     public static void main(String[] args) throws ParseException {
         int op = 0;
 
@@ -25,15 +29,16 @@ public class viewMain {
             op = menuMain();
             switch (op) {
                 case 1:
-                    viewAlumno.startMenu();
+                ViewPrograma.startMenu();
+        
                     break;
                 case 2:
-                    viewMatricula.startMenu();
+                viewMatricula.startMenu();
                 case 3:
-                    ViewPrograma.startMenu();
+                viewSalon.startMenu();
 
                 case 4:
-                    viewSalon.startMenu();
+                viewAlumno.startMenu();
 
                 case 5:
                     viewTarifa.startMenu();
@@ -44,7 +49,11 @@ public class viewMain {
                 case 8:
                     viewProfesor.startMenu();
                 case 9:
-                    viewHorario.startMenu();
+                    Universidad.startMenu();
+                break;
+                    
+                case 10:
+
                 default:
                     System.out.println("Fin");
                     break;
@@ -53,17 +62,19 @@ public class viewMain {
     }
 
     public static int menuMain() {
-        System.out.println("---Gestor de Alumnos-----");
-        System.out.println("1. Modulo de Alumnos");
+        System.out.println("\t MENU PRINCIPAL");
+        System.out.println("==============================");
+        System.out.println("1. Modulo de programa");
         System.out.println("2. Modulo de matriculas");
-        System.out.println("3. Modulo de programa");
-        System.out.println("4. Modulo de salon");
+        System.out.println("3. Modulo de salon");
+        System.out.println("4. Modulo de Alumnos");
         System.out.println("5. Modulo de tarifa");
         System.out.println("6. Modulo de asignatura");
         System.out.println("7. Modulo de curso");
         System.out.println("8. Modulo de profesor");
-        System.out.println("9. Modulo de horario");
-        System.out.println("10. Salir:");
+        System.out.println("9. Modulo de reportes");
+        System.out.println("10. Salir");
+        
         return leer.nextInt();
     }
 }

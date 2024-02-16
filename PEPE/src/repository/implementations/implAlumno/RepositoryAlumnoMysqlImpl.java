@@ -98,9 +98,8 @@ public class RepositoryAlumnoMysqlImpl implements ModelCrudGenerico<Alumno> {
         Alumno alumno = new Alumno();
         alumno.setId(rs.getInt("id_alumno"));
 
-        // Supongamos que tienes una clase Persona y Programa que representan los datos asociados al alumno
         Direccion direccion = new Direccion(rs.getInt("id_direccion"), rs.getString("barrio"), rs.getString("calle"), rs.getString("numero_casa"));
-        Persona persona = new Persona();
+        Persona persona = new Persona(rs.getInt("id_persona"), rs.getString("nombre"), rs.getString("apellido"), rs.getInt("id_ciudad"), rs.getInt("id_direccion"), rs.getString("telefono"), rs.getDate("fecha_nacimiento"));
         persona.setId(rs.getInt("id_persona"));
         persona.setNombres(rs.getString("nombres"));
         persona.setApellidos(rs.getString("apellidos"));

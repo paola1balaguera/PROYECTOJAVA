@@ -15,7 +15,7 @@ public class Persona {
     private Date fecha_nacimiento;
     private Ciudad ciudad;
     private enumSexo sexo;
-    public Persona(){}
+    public Persona(int id2, String nombre, String apellido, String ciudad2, String direccion2, String telefono2, Date fechaNacimiento){}
 
     public Persona(TipoDocumento tipo_documento, int documento, String nombres,
                    String apellidos, Direccion direccion2, String telefono, Date fecha_nacimiento,
@@ -29,6 +29,10 @@ public class Persona {
         this.fecha_nacimiento = fecha_nacimiento;
         this.sexo = sexo;
         this.ciudad = ciudad2;
+    }
+
+    public Persona(int int1, String string, String string2, int int2, int int3, String string3, java.sql.Date date) {
+        //TODO Auto-generated constructor stub
     }
 
     public enum TipoDocumento{

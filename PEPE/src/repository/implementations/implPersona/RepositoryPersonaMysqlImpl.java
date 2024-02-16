@@ -86,7 +86,7 @@ public class RepositoryPersonaMysqlImpl implements ModelCrudGenerico<Persona> {
     public void eliminar(int id) {}
 
     private Persona crearPersona(ResultSet rs) throws SQLException {
-        Persona persona = new Persona();
+        Persona persona = new Persona(0, null, null, null, null, null, null);
         persona.setId(rs.getInt("id"));
         persona.setDocumento(rs.getInt("documento"));
         persona.setNombres(rs.getString("nombre"));

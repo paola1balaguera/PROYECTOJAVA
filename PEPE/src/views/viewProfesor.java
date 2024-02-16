@@ -66,10 +66,18 @@ public class viewProfesor extends viewMain {
         int idProfesor = leer.nextInt();
         Profesor profesor = obtenerProfesorPorId(idProfesor);
         if (profesor != null) {
-            // Lógica para editar el profesor
-        } else {
-            System.out.println("No se encontró ningún profesor con el ID proporcionado.");
-        }
+
+            System.out.println("Introduce el ID del departamento del profesor:");
+            int idDepartamento = leer.nextInt();
+            Facultad departamento = obtenerDepartamentoPorId(idDepartamento);
+
+            profesor.setDepartamento(departamento);
+
+            System.out.println("Profesor actualizado correctamente.");
+
+            } else {
+                System.out.println("No se encontró ningún profesor con el ID proporcionado.");
+            }
     }
 
     public static void eliminarProfesor() {

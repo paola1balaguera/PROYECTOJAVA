@@ -18,6 +18,10 @@ public class Horario {
         this.asignaturaPeriodo = asignaturaperiodo;
     }
 
+    public Horario(String string, String string2, String string3) {
+        //TODO Auto-generated constructor stub
+    }
+
     public boolean matches(String string) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'matches'");

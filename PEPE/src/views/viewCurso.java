@@ -63,7 +63,23 @@ public class viewCurso extends viewMain {
         int idCurso = leer.nextInt();
         Curso curso = obtenerCursoPorId(idCurso);
         if (curso != null) {
-            // Lógica para editar el curso
+           
+            
+            System.out.println("Introduce el nombre del curso:");
+            String nombre = leer.nextLine();
+    
+            System.out.println("Introduce los temas del curso:");
+            String temas = leer.nextLine();
+    
+            System.out.println("Introduce las competencias del curso:");
+            String competencias = leer.nextLine();
+
+            curso.setNombre(nombre);
+            curso.setTemas(temas);
+            curso.setCompetencias(competencias);
+
+            System.out.println("Curso actualizado coreectamente.");
+
         } else {
             System.out.println("No se encontró ningún curso con el ID proporcionado.");
         }

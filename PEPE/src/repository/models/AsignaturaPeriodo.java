@@ -17,6 +17,11 @@ public class AsignaturaPeriodo {
     }
 
 
+    public AsignaturaPeriodo(int id2, Alumno asignatura2, AsignaturaPeriodo periodo2) {
+        //TODO Auto-generated constructor stub
+    }
+
+
     public int getId() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getId'");

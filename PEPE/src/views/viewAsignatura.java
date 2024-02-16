@@ -74,8 +74,35 @@ public class viewAsignatura extends viewMain {
         System.out.print("ID de la asignatura a editar: ");
         int idAsignatura = leer.nextInt();
         Asignatura asignatura = obtenerAsignaturaPorId(idAsignatura);
+
+
         if (asignatura != null) {
-            // Lógica para editar la asignatura
+            
+            System.out.println("Introduce el nombre de la asignatura:");
+        String nombre = leer.nextLine();
+
+        System.out.println("Introduce el número de créditos:");
+        int creditos = leer.nextInt();
+
+        System.out.println("Introduce el cupo disponible:");
+        int cupoDisponible = leer.nextInt();
+
+        System.out.println("Introduce el ID del curso:");
+        int idCurso = leer.nextInt();
+        Curso curso = obtenerCursoPorId(idCurso);
+
+        System.out.println("Introduce el ID del programa:");
+        int idPrograma = leer.nextInt();
+        Programa programa = obtenerProgramaPorId(idPrograma);
+
+        asignatura.setNombre(nombre);
+        asignatura.setCreditos(creditos);
+        asignatura.setCupoDisponible(cupoDisponible);
+        asignatura.setCurso(curso);
+        asignatura.setPrograma(programa);
+
+        System.out.println("Asignatura actualizada correctamente.");
+
         } else {
             System.out.println("No se encontró ninguna asignatura con el ID proporcionado.");
         }

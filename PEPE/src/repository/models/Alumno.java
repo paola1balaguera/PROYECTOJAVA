@@ -5,11 +5,11 @@ public class Alumno {
     private Persona persona; 
     private Programa programa;
 
-    public Alumno() {}
-    public Alumno(int id, Persona persona, Programa programa) {
+    public Alumno(int id2, String nombre, String apellido) {}
+    public Alumno(int id, Persona nombre, Programa apellido) {
         this.id = id;
-        this.persona = persona;
-        this.programa = programa;
+        this.persona = nombre;
+        this.programa = apellido;
     }
 
     public int getId() {

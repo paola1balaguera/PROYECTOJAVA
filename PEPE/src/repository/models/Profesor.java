@@ -21,4 +21,9 @@ public class Profesor {
     public Facultad getDepartamento() {
         return departamento;
     }
+
+    public void setDepartamento(Facultad departamento2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setDepartamento'");
+    }
 }

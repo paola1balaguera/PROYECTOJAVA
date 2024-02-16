@@ -1,21 +1,21 @@
 package repository.models;
 
+import views.Nivel;
+
 public class Programa {
     private int id;
     private String nombre;
-    private boolean nivel;
+    public boolean nivel;
 
     public Programa() {}
 
-    public Programa(int id, String nombre, boolean nivel){
+    public Programa(int id, String nombre, boolean nivel2){
         this.id = id;
         this.nombre = nombre;
-        this.nivel = nivel;
+        this.nivel = nivel2;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    
 
     public int getId() {
         return id;
@@ -29,11 +29,35 @@ public class Programa {
         return nivel;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setNivel(boolean nivel) {
+        this.nivel = nivel;
+    }
+
+
+
+
+
+
+
+
     @Override
     public String toString() {
         return "Programa{" +
+                "id=" + id + '\'' +
                 "nombre=" + nombre + '\'' +
                 "nivel=" + nivel + '\'' +
             '}';
     }
+
+
+
 }

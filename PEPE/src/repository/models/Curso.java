@@ -30,4 +30,19 @@ public class Curso {
     public String getCompetencias() {
         return competencias;
     }
+
+    public void setTemas(String temas2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setTemas'");
+    }
+
+    public void setNombre(String nombre2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setNombre'");
+    }
+
+    public void setCompetencias(String competencias2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setCompetencias'");
+    }
 }

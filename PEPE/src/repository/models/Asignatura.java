@@ -44,4 +44,29 @@ public class Asignatura {
     public Programa getPrograma() {
         return programa;
     }
+
+    public void setPrograma(Programa programa2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setPrograma'");
+    }
+
+    public void setCurso(Curso curso2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setCurso'");
+    }
+
+    public void setCupoDisponible(int cupoDisponible2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setCupoDisponible'");
+    }
+
+    public void setCreditos(int creditos2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setCreditos'");
+    }
+
+    public void setNombre(String nombre2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setNombre'");
+    }
 }

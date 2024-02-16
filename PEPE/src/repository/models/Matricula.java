@@ -47,4 +47,29 @@ public class Matricula {
             REPROBADO,
             EN_CURSO  // Agrega este valor
         }
+
+    public Programa getPrograma() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPrograma'");
+    }
+
+    public Alumno getEstudiante() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getEstudiante'");
+    }
+
+    public Object getAsignatura() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAsignatura'");
+    }
+
+    public void setAsignaturaPeriodo(AsignaturaPeriodo asignatura) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setAsignaturaPeriodo'");
+    }
+
+    public void setEstadoEnum(EstadoEnum estado2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setEstadoEnum'");
+    }
 }

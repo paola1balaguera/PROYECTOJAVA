@@ -2,6 +2,8 @@ package views;
 
 
 import repository.models.Edificio;
+import repository.models.Periodo;
+import repository.models.Programa;
 import repository.models.Salon;
 
 import java.util.ArrayList;
@@ -63,6 +65,9 @@ public class viewSalon extends viewMain {
         System.out.println("Salón creado con éxito.");
     }
 
+    /**
+     * 
+     */
     public static void editarSalon() {
         Scanner leer = new Scanner(System.in);
         System.out.print("ID del salón a editar: ");
@@ -70,7 +75,28 @@ public class viewSalon extends viewMain {
         Salon salon = obtenerSalonPorId(idSalon);
         if (salon != null) {
             // Lógica para editar el salón
-        } else {
+
+            System.out.println("Introduce la capacidad de alumnos:");
+            int capacidadAlumnos = leer.nextInt();
+    
+            System.out.println("Introduce el piso:");
+            int piso = leer.nextInt();
+    
+            System.out.println("Introduce el identificador:");
+            String identificador = leer.next();
+    
+            System.out.println("Introduce el ID del edificio al que pertenece:");
+            int idEdificio = leer.nextInt();
+            Edificio edificio = obtenerEdificioPorNombre(idEdificio);
+
+            salon.setCapacidadAlumnos(capacidadAlumnos);
+            salon.setPiso(piso);
+            salon.setIdentificador(identificador);
+
+    
+            System.out.println("Salón actualizado correctamente.");
+        }
+        else {
             System.out.println("No se encontró ningún salón con el ID proporcionado.");
         }
     }

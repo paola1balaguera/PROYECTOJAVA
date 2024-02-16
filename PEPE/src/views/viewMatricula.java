@@ -142,12 +142,28 @@ public class viewMatricula extends viewMain {
 
     public static void editarMatricula() {
         Scanner leer = new Scanner(System.in);
+
         System.out.print("ID de la matrícula a editar: ");
         int idMatricula = leer.nextInt();
         Matricula matricula = obtenerMatriculaPorId(idMatricula);
+
         if (matricula != null) {
-            // Lógica para editar la matrícula
-        } else {
+            System.out.println("Introduce el ID de la asignatura:");
+            int idAsignatura = leer.nextInt();
+            AsignaturaPeriodo asignatura = obtenerAsignaturaPorId(idAsignatura);
+        
+            System.out.println("Introduce el estado de la matrícula (APROBADO, REPROBADO, CURSANDO):");
+            String estadoString = leer.next();
+            Matricula.EstadoEnum estado = Matricula.EstadoEnum.valueOf(estadoString.toUpperCase());
+        
+
+            matricula.setAsignaturaPeriodo(asignatura);
+            matricula.setEstadoEnum(estado);
+
+            System.out.println("Matricula actualizada correctamente.");
+        
+        } else 
+            {
             System.out.println("No se encontró ninguna matrícula con el ID proporcionado.");
         }
     }

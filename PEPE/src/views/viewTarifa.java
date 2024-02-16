@@ -3,6 +3,7 @@ package views;
 import repository.models.Periodo;
 import repository.models.Programa;
 import repository.models.Tarifa;
+import utils.connectionBDMySql.connectionBDMySql;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,12 +64,32 @@ public class viewTarifa extends viewMain {
     }
 
     public static void editarTarifa() {
-        Scanner leer = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("ID de la tarifa a editar: ");
-        int idTarifa = leer.nextInt();
+        int idTarifa = scanner.nextInt();
         Tarifa tarifa = obtenerTarifaPorId(idTarifa);
         if (tarifa != null) {
-            // Lógica para editar la tarifa
+
+            System.out.println("Introduce el valor del crédito:");
+            double valorCredito = scanner.nextDouble();
+    
+            System.out.println("Introduce el ID del periodo:");
+            int idPeriodo = scanner.nextInt();
+            Periodo periodo = obtenerPeriodoPorId(idPeriodo);
+    
+            System.out.println("Introduce el ID del programa:");
+            int idPrograma = scanner.nextInt();
+            Programa programa = obtenerProgramaPorId(idPrograma);
+
+
+            tarifa.setValorCredito(valorCredito);
+            tarifa.setPeriodo(periodo);
+            tarifa.setPrograma(programa);
+
+            connectionBDMySql.editarTarifa(tarifa);
+
+            System.out.println("Tarifa actualizada con éxito.");
+
         } else {
             System.out.println("No se encontró ninguna tarifa con el ID proporcionado.");
         }
